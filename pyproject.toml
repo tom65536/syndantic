@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "syndantic"
-readme = "README.md"
 license = {file = "LICENSE"}
+description = "AST-Driven Parsing"
 classifiers = [
     "License :: OSI Approved :: MIT License",
     "Development Status :: 2 - Pre-Alpha",
@@ -16,7 +16,7 @@ classifiers = [
     "Programming Language :: Python :: 3.13",
     "Typing :: Typed"
 ]
-dynamic = ["version", "description"]
+dynamic = ["version", "readme"]
 dependencies = [
     "pydantic~=2.11"
 ]
@@ -39,6 +39,12 @@ build = [
     "build ~= 1.2"
 ]
 
+[tool.setuptools.dynamic.version]
+attr="syndantic.__about__.__version__"
+
+[tool.setuptools.dynamic.readme]
+file = ["README.md"]
+content-type = "text/markdown"
 
 [tool.isort]
 line_length=79
