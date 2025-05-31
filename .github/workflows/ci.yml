@@ -40,12 +40,14 @@ jobs:
           pip install tox
       - name: Run unit tests with tox
         run: tox run -e pytest
-      - name: Codacy Coverage Reporter
-        uses: codacy/codacy-coverage-reporter-action@89d6c85cfafaec52c72b6c5e8b2878d33104c699
-        if: matrix.python-version == '3.12' && matrix.os == 'ubuntu-latest'
+      - name: Code Coverage Summary Report
+        uses: irongut/CodeCoverageSummary@v1.3.0
         with:
-          project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
-          coverage-reports: coverage.xml
+          filename: 'coverage.xml'
+          badge: true
+          format: 'markdown'
+          output: 'both'
+        if: matrix.python-version == '3.12' && matrix.os == 'ubuntu-latest'
 
   Release:
     needs:
