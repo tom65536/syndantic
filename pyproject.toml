@@ -54,6 +54,7 @@ profile="black"
 [tool.mypy]
 warn_unused_configs = true
 packages = "syndantic"
+plugins = ["pydantic.mypy"]
 
 [tool.bandit]
 tests = ["B101", "B102", "B110", "B112"]

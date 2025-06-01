@@ -1,3 +1,8 @@
+"""Just a dummy."""
+
+
 def test_dummy():
     """Test nothing."""
-    assert True
+    result = 1 + 1
+
+    assert result == 2
