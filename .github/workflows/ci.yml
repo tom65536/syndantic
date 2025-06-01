@@ -67,7 +67,17 @@ jobs:
     - uses: actions/checkout@v4
       with:
         fetch-depth: 0
-
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: 3.12
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install setuptools setuptools-scm
+    - name: Generate version file
+      run: |
+        python -m setuptools_scm --force-write-version-files
     - name: Python Semantic Release
       id: release
       uses: python-semantic-release/python-semantic-release@3ba53469e72452e7597dd5c61851e6fbf294420b  # v9.8.3
