@@ -4,12 +4,21 @@ For the full list of built-in configuration values, see the documentation:
 https://www.sphinx-doc.org/en/master/usage/configuration.html
 """
 
-# -- Project information ---------------------------------------------------
+from importlib.metadata import (
+    PackageNotFoundError,
+)
+from importlib.metadata import version as get_version
 
+# -- Project information ---------------------------------------------------
 project = "syndantic"
-copyright = "2024, Thomas Reiter"  # pylint: disable=redefined-builtin
+copyright = "2025, Thomas Reiter"  # pylint: disable=redefined-builtin
 author = "Thomas Reiter"
-release = "0.0.2"
+
+try:
+    version = get_version(project)
+except PackageNotFoundError:
+    # package is not installed
+    pass
 
 # -- General configuration -------------------------------------------------
 
@@ -35,7 +44,6 @@ exclude_patterns = []
 intersphinx_mapping = {
     "python": ("https://docs.python.org/3.12/", None),
     "lark": ("https://lark-parser.readthedocs.io/en/stable/", None),
-    "pydantic": ("https://docs.pydantic.dev/latest/objects.inv", None),
 }
 
 github_username = "tom65536"
