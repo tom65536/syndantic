@@ -83,6 +83,9 @@ jobs:
       uses: python-semantic-release/python-semantic-release@3ba53469e72452e7597dd5c61851e6fbf294420b  # v9.8.3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
+    - name: Regenerate version file
+      run: |
+        python -m setuptools_scm --force-write-version-files
 
     - name: Publish package distributions to PyPI
       id: pypi-publish
