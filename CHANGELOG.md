@@ -6,20 +6,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
-<<<<<<< HEAD
+## [v0.0.3] - 2025-06-02
 ## [v0.0.2] - 2025-06-02
 
 ### Fix
-=======
-## [v1.0.0] - 2025-06-02
-
-### Bug fixes
->>>>>>> cdf7ac1 (1.0.0)
 
 * fix: update CI workflow ([`113345b`](https://github.com/tom65536/syndantic/commit/113345b6e76260ec7f0e89d545b09aed4cbd3090))
 ## [v0.0.1] - 2025-06-01
 
-### Bug fixes
+### Fix
 
 * fix: add CI step for writing version files ([`96bb22d`](https://github.com/tom65536/syndantic/commit/96bb22d8e589ec18ab3cf7f7d0b54258be775053))
 
