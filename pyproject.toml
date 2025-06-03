@@ -81,3 +81,4 @@ style = 'google'
 
 [tool.setuptools_scm]
 version_file = "src/syndantic/__about__.py"
+local_scheme = "no-local-version"
